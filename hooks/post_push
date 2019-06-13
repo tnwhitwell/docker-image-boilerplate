@@ -1,0 +1,4 @@
+#!/bin/bash
+VCS_REF=$(git rev-parse HEAD)
+docker tag "${IMAGE_NAME}" "${DOCKER_REPO}:${VCS_REF}"
+docker push "${DOCKER_REPO}:${VCS_REF}"
